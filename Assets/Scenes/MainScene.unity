@@ -316,6 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249116087}
   - component: {fileID: 249116088}
+  - component: {fileID: 249116089}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: MainCamera
@@ -356,6 +357,24 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 46495580}
   m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 1.1176
+--- !u!114 &249116089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249116086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <trackablesChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SerializedLibrary: {fileID: 11400000, guid: 1a75cfcfedabf154399d388ec84bf3f2, type: 2}
+  m_MaxNumberOfMovingImages: 0
+  m_TrackedImagePrefab: {fileID: 1267517705069356542, guid: 5472d28a3109d5c47bc559e6adfc6de2, type: 3}
 --- !u!1 &1245318842
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,8 +598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
   m_AutoFocus: 1
   m_ImageStabilization: 0
   m_LightEstimation: 0
