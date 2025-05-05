@@ -4,30 +4,65 @@ using UnityEngine.InputSystem;
 
 public class OculusInputCacheValues : MonoBehaviour
 {
-    //Inputs are exposed in inspector as InputActions
-    public InputAction triggerAction;
-    public InputAction gripAction;
-    public InputAction thumbstickAction;
-    public InputAction primaryButtonAction;
-    public InputAction secondaryButtonAction;
-    public InputAction menuButtonAction;
-    
-    //Cache inputs for further read access (for example UI)
-    public float triggerValue { get; private set; }
-    public float gripValue { get; private set; }
-    public Vector2 thumbstickValue { get; private set; }
-    public bool primaryButtonPressed { get; private set; }
-    public bool secondaryButtonPressed { get; private set; }
-    public bool menuButtonPressed { get; private set; }
+    [Header("Trigger Action")]
+    public InputAction triggerLeft;
+    public InputAction triggerRight;
+
+    [Header("Grip Action")]
+    public InputAction gripLeft;
+    public InputAction gripRight;
+
+    [Header("Thumbstick Action")]
+    public InputAction thumbstickLeft;
+    public InputAction thumbstickRight;
+
+    [Header("Primary Button Action")]
+    public InputAction primaryButtonLeft;
+    public InputAction primaryButtonRight;
+
+    [Header("Secondary Button Action")]
+    public InputAction secondaryButtonLeft;
+    public InputAction secondaryButtonRight;
+
+    [Header("Menu Button Action")]
+    public InputAction menu;
+
+    // Cache values
+    public float triggerValueLeft { get; private set; }
+    public float triggerValueRight { get; private set; }
+
+    public float gripValueLeft { get; private set; }
+    public float gripValueRight { get; private set; }
+
+    public Vector2 thumbstickValueLeft { get; private set; }
+    public Vector2 thumbstickValueRight { get; private set; }
+
+    public float primaryButtonValueLeft { get; private set; }
+    public float primaryButtonValueRight { get; private set; }
+
+    public float secondaryButtonValueLeft { get; private set; }
+    public float secondaryButtonValueRight { get; private set; }
+
+    public float menuButtonValue { get; private set; }
 
     void Awake()
     {
-        BindAction(triggerAction, OnTriggerPerformed, OnTriggerCanceled);
-        BindAction(gripAction, OnGripPerformed, OnGripCanceled);
-        BindAction(thumbstickAction, OnThumbstickPerformed, OnThumbstickCanceled);
-        BindAction(primaryButtonAction, OnPrimaryButtonPerformed, OnPrimaryButtonCanceled);
-        BindAction(secondaryButtonAction, OnSecondaryButtonPerformed, OnSecondaryButtonCanceled);
-        BindAction(menuButtonAction, OnMenuButtonPerformed, OnMenuButtonCanceled);
+        BindAction(triggerLeft,  ctx => triggerValueLeft = ctx.ReadValue<float>(),  _ => triggerValueLeft = 0);
+        BindAction(triggerRight, ctx => triggerValueRight = ctx.ReadValue<float>(), _ => triggerValueRight = 0);
+
+        BindAction(gripLeft,  ctx => gripValueLeft = ctx.ReadValue<float>(),  _ => gripValueLeft = 0);
+        BindAction(gripRight, ctx => gripValueRight = ctx.ReadValue<float>(), _ => gripValueRight = 0);
+
+        BindAction(thumbstickLeft,  ctx => thumbstickValueLeft = ctx.ReadValue<Vector2>(),  _ => thumbstickValueLeft = Vector2.zero);
+        BindAction(thumbstickRight, ctx => thumbstickValueRight = ctx.ReadValue<Vector2>(), _ => thumbstickValueRight = Vector2.zero);
+
+        BindAction(primaryButtonLeft,  ctx => primaryButtonValueLeft = ctx.ReadValue<float>(),  _ => primaryButtonValueLeft = 0);
+        BindAction(primaryButtonRight, ctx => primaryButtonValueRight = ctx.ReadValue<float>(), _ => primaryButtonValueRight = 0);
+
+        BindAction(secondaryButtonLeft,  ctx => secondaryButtonValueLeft = ctx.ReadValue<float>(),  _ => secondaryButtonValueLeft = 0);
+        BindAction(secondaryButtonRight, ctx => secondaryButtonValueRight = ctx.ReadValue<float>(), _ => secondaryButtonValueRight = 0);
+
+        BindAction(menu, ctx => menuButtonValue = ctx.ReadValue<float>(), _ => menuButtonValue = 0);
     }
 
     private void BindAction(InputAction action, Action<InputAction.CallbackContext> performed, Action<InputAction.CallbackContext> canceled)
@@ -42,75 +77,16 @@ public class OculusInputCacheValues : MonoBehaviour
 
     private void OnDisable()
     {
-        triggerAction?.Disable();
-        gripAction?.Disable();
-        thumbstickAction?.Disable();
-        primaryButtonAction?.Disable();
-        secondaryButtonAction?.Disable();
-        menuButtonAction?.Disable();
+        triggerLeft?.Disable();
+        triggerRight?.Disable();
+        gripLeft?.Disable();
+        gripRight?.Disable();
+        thumbstickLeft?.Disable();
+        thumbstickRight?.Disable();
+        primaryButtonLeft?.Disable();
+        primaryButtonRight?.Disable();
+        secondaryButtonLeft?.Disable();
+        secondaryButtonRight?.Disable();
+        menu?.Disable();
     }
-
-    private void OnTriggerPerformed(InputAction.CallbackContext context) 
-    {
-        triggerValue = context.ReadValue<float>();
-    }
-
-    
-    private void OnGripPerformed(InputAction.CallbackContext context) 
-    {
-        gripValue = context.ReadValue<float>();
-    }
-    
-    
-    private void OnThumbstickPerformed(InputAction.CallbackContext context) 
-    {
-        thumbstickValue = context.ReadValue<Vector2>();
-    }
-    
-    
-    private void OnPrimaryButtonPerformed(InputAction.CallbackContext context) 
-    {
-        primaryButtonPressed = true;
-    }
-    
-    private void OnSecondaryButtonPerformed(InputAction.CallbackContext context) 
-    {
-        secondaryButtonPressed = true;
-    }
-    
-    private void OnMenuButtonPerformed(InputAction.CallbackContext context) 
-    {
-        menuButtonPressed = true;
-    }
-    
-    private void OnGripCanceled(InputAction.CallbackContext context)
-    {
-        gripValue = 0;
-    }
-    
-    private void OnTriggerCanceled(InputAction.CallbackContext context)
-    {
-        triggerValue = 0;
-    }
-    
-    private void OnThumbstickCanceled(InputAction.CallbackContext context)
-    {
-        thumbstickValue = Vector2.zero;
-    }
-    
-    private void OnPrimaryButtonCanceled(InputAction.CallbackContext context)
-    {
-        primaryButtonPressed = false;
-    }
-    
-    private void OnSecondaryButtonCanceled(InputAction.CallbackContext context)
-    {
-        secondaryButtonPressed = false;
-    }
-    
-    private void OnMenuButtonCanceled(InputAction.CallbackContext context)
-    {
-        menuButtonPressed = false;
-    }
-
 }

@@ -572,14 +572,6 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Trigger Left
       m_Flags: 0
-    - m_Name: 
-      m_Id: 960996ca-4a28-4ee5-9474-ed6d07382009
-      m_Path: <Keyboard>/r
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger Left
-      m_Flags: 0
     m_Flags: 0
   triggerRight:
     m_Name: Trigger Right
@@ -592,14 +584,6 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 7b0e1449-ead5-4f05-a153-bfcaef7268c3
       m_Path: <OculusTouchController>{RightHand}/triggerPressed
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger Right
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 1ad6fd3a-7fdc-49da-b16a-f1a573b1b6cb
-      m_Path: <Keyboard>/t
       m_Interactions: 
       m_Processors: 
       m_Groups: 

@@ -1,58 +1,54 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class XRVisualDebug : MonoBehaviour
 {
-    [SerializeField] private OculusInputCacheValues questInputChaceValues;
+    [SerializeField] private OculusInputCacheValues questInputCacheValues;
 
-    [Header("Primary Buttons")] [SerializeField]
-    private GameObject _primaryButtonRight;
+    [Header("Primary Button")]
+    [SerializeField] private TextMeshProUGUI _primaryButtonRightText;
+    [SerializeField] private TextMeshProUGUI _primaryButtonLeftText;
 
-    [SerializeField] private GameObject _primaryButtonLeft;
+    [Header("Secondary Button")]
+    [SerializeField] private TextMeshProUGUI _secondaryButtonRightText;
+    [SerializeField] private TextMeshProUGUI _secondaryButtonLeftText;
 
-    [Header("Secondary Buttons")] [SerializeField]
-    private GameObject _secondaryButtonRight;
+    [Header("Triggers")]
+    [SerializeField] private TextMeshProUGUI _triggerRightText;
+    [SerializeField] private TextMeshProUGUI _triggerLeftText;
 
-    [SerializeField] private GameObject _secondaryButtonLeft;
+    [Header("Grips")]
+    [SerializeField] private TextMeshProUGUI _gripRightText;
+    [SerializeField] private TextMeshProUGUI _gripLeftText;
 
-    [Header("Triggers Buttons")] [SerializeField]
-    private GameObject _triggerRight;
+    [Header("Thumbsticks")]
+    [SerializeField] private TextMeshProUGUI _thumbRightText;
+    [SerializeField] private TextMeshProUGUI _thumbLeftText;
 
-    [SerializeField] private GameObject _triggerLeft;
+    [Header("Menu Button")]
+    [SerializeField] private TextMeshProUGUI _menuButtonText;
 
-    [Header("Grips Buttons")] [SerializeField]
-    private GameObject _gripRight;
-
-    [SerializeField] private GameObject _gripLeft;
-
-    [Header("Thumb sticks")] [SerializeField]
-    private GameObject _thumbRight;
-
-    [SerializeField] private GameObject _thumbLeft;
-
-    [Header("Grip Buttons")] [SerializeField]
-    private GameObject _menuButton;
-
-    void Start()
-    {
-        questInputChaceValues = FindFirstObjectByType<OculusInputCacheValues>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        foo(_primaryButtonRight);
-    }
+        if (questInputCacheValues == null) return;
 
+        _primaryButtonRightText.text = $"PrimaryRight: {questInputCacheValues.primaryButtonValueRight:F2}";
+        _primaryButtonLeftText.text  = $"PrimaryLeft:  {questInputCacheValues.primaryButtonValueLeft:F2}";
 
-    private void foo(GameObject ogetto)
-    {
-        // Debug.Log(ogetto);
-        var textComponent = ogetto.GetComponent<TextMeshProUGUI>();
-        var value = questInputChaceValues.primaryButtonAction.ReadValue<float>();
-        Debug.Log(value.ToString());
-        textComponent.text = value.ToString();
+        _secondaryButtonRightText.text = $"SecondaryRight: {questInputCacheValues.secondaryButtonValueRight:F2}";
+        _secondaryButtonLeftText.text  = $"SecondaryLeft:  {questInputCacheValues.secondaryButtonValueLeft:F2}";
+
+        _triggerRightText.text = $"TriggerRight: {questInputCacheValues.triggerValueRight:F2}";
+        _triggerLeftText.text  = $"TriggerLeft:  {questInputCacheValues.triggerValueLeft:F2}";
+
+        _gripRightText.text = $"GripRight: {questInputCacheValues.gripValueRight:F2}";
+        _gripLeftText.text  = $"GripLeft:  {questInputCacheValues.gripValueLeft:F2}";
+
+        Vector2 thumbRight = questInputCacheValues.thumbstickValueRight;
+        Vector2 thumbLeft = questInputCacheValues.thumbstickValueLeft;
+        _thumbRightText.text = $"ThumbRight: ({thumbRight.x:F2}, {thumbRight.y:F2})";
+        _thumbLeftText.text  = $"ThumbLeft:  ({thumbLeft.x:F2}, {thumbLeft.y:F2})";
+
+        _menuButtonText.text = $"Menu: {questInputCacheValues.menuButtonValue:F2}";
     }
 }
