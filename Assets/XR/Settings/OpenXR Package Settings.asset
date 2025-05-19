@@ -73,7 +73,6 @@ MonoBehaviour:
   - {fileID: 8924193027989225342}
   - {fileID: -4243044550993151340}
   - {fileID: 2896294531352426474}
-  - {fileID: 5981872944125976304}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
@@ -549,7 +548,6 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: 
   features:
-  - {fileID: 1872601217639114699}
   - {fileID: -1288812002021492192}
   - {fileID: -81488143269574829}
   - {fileID: 6827547700180115271}
@@ -557,20 +555,9 @@ MonoBehaviour:
   - {fileID: 3118434568975106800}
   - {fileID: -8528764226026997831}
   - {fileID: 8060887374309929580}
-  - {fileID: -8343774735839971217}
   - {fileID: -7275786551434423615}
   - {fileID: 5747824722594775437}
   - {fileID: 1740828203801538330}
-  - {fileID: 3117648975941143595}
-  - {fileID: 2961822252852812805}
-  - {fileID: 8915412918782266939}
-  - {fileID: -2736523775021857447}
-  - {fileID: -1794146586034289516}
-  - {fileID: 4198029704417271457}
-  - {fileID: 4625443614257081868}
-  - {fileID: -1683970603079848889}
-  - {fileID: -2182798282033641661}
-  - {fileID: 8652614022473614849}
   - {fileID: 4692046606329665912}
   - {fileID: 7582428393732962971}
   - {fileID: -6671728004086666279}
@@ -578,7 +565,6 @@ MonoBehaviour:
   - {fileID: 969374116105589991}
   - {fileID: 838461355560685299}
   - {fileID: 4727094745500377626}
-  - {fileID: -7583663743020068059}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
@@ -1480,7 +1466,6 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -4654248952321518714}
   - {fileID: -6357051555689744650}
   - {fileID: -4134847183446594375}
   - {fileID: -2354178355807221348}
@@ -1490,19 +1475,8 @@ MonoBehaviour:
   - {fileID: 9080650184866682920}
   - {fileID: -3501214416179155835}
   - {fileID: -142875706870603624}
-  - {fileID: -3372826544216772267}
   - {fileID: -4502838125044308678}
   - {fileID: 5487718322103130136}
-  - {fileID: 498794214035502467}
-  - {fileID: -3518473708547943106}
-  - {fileID: -852211826588265430}
-  - {fileID: -2915904143037353199}
-  - {fileID: -916756909928838785}
-  - {fileID: -3854636051337996805}
-  - {fileID: 4171679396919080043}
-  - {fileID: -2605424521019650022}
-  - {fileID: -8102953247419827092}
-  - {fileID: -4789780752765352618}
   - {fileID: -5083949986805040493}
   - {fileID: -3368901602621329233}
   - {fileID: -1585751008182881909}
@@ -1511,7 +1485,6 @@ MonoBehaviour:
   - {fileID: -9051869384106710865}
   - {fileID: 714865162980286907}
   - {fileID: -2292103588779449693}
-  - {fileID: 4356568344763811714}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
