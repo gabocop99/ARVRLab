@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87996e81a5026dc429bfd6a9271548b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 710086248}
   m_InteractableObject: {fileID: 1421045350}
   m_SnapCollider: {fileID: 17434652}
   m_DisableSnapColliderWhenSelected: 0
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87996e81a5026dc429bfd6a9271548b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 710086248}
   m_InteractableObject: {fileID: 743577948}
   m_SnapCollider: {fileID: 454105457}
   m_DisableSnapColliderWhenSelected: 0
@@ -3791,7 +3791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87996e81a5026dc429bfd6a9271548b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 710086248}
   m_InteractableObject: {fileID: 833028533}
   m_SnapCollider: {fileID: 1105542643}
   m_DisableSnapColliderWhenSelected: 0
@@ -5950,7 +5950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 710086248}
   m_Colliders:
   - {fileID: 1859046821}
   m_InteractionLayers:
@@ -7764,7 +7764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87996e81a5026dc429bfd6a9271548b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 710086248}
   m_InteractableObject: {fileID: 2101070575}
   m_SnapCollider: {fileID: 2138967581}
   m_DisableSnapColliderWhenSelected: 0
