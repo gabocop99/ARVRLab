@@ -1,16 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuzzleManager : MonoBehaviour
+public class PuzzleManager : MonoBehaviour, ISolvablePuzzle
 {
 
     public List<PuzzleObject> correctSequence;
+    
     private int _currentIndex = 0;
     private Material _material;
     public Color correctColor;
     public Color incorrectColor;
-    [HideInInspector] public bool isPuzzleSolved = false;
     public bool IsSolved => isPuzzleSolved;
+    [HideInInspector] public bool isPuzzleSolved = false;
 
     private void Start()
     { 

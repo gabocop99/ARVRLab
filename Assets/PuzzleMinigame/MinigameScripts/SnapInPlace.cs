@@ -1,15 +1,15 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SnapInPlace : MonoBehaviour
+public class SnapInPlace : MonoBehaviour, ISolvablePuzzle
 {    
     public string objectName;
 
-    [HideInInspector] public bool isPuzzleSolved = false;
     public bool IsSolved => isPuzzleSolved;
+    [HideInInspector] public bool isPuzzleSolved = false;
     private bool _isObjectInPlace = false;
     
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if (_isObjectInPlace) {return;}
