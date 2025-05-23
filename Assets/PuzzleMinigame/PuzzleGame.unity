@@ -3326,37 +3326,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
---- !u!1 &954200497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 954200498}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &954200498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954200497}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1719731970}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1023336256
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,6 +6034,7 @@ GameObject:
   - component: {fileID: 1719731973}
   - component: {fileID: 1719731972}
   - component: {fileID: 1719731971}
+  - component: {fileID: 1719731976}
   m_Layer: 0
   m_Name: BasketBall
   m_TagString: Untagged
@@ -6084,8 +6054,7 @@ Transform:
   m_LocalPosition: {x: -3.494, y: -0.35400003, z: -4.009}
   m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 954200498}
+  m_Children: []
   m_Father: {fileID: 511103578}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1719731971
@@ -6311,6 +6280,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719731969}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1719731976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719731969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930ddc69d01285f45a07059aa96a9a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderIgnored: XR Origin (XR Rig)
 --- !u!1 &1734306728
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,6 +7348,7 @@ MonoBehaviour:
   - {fileID: 833028535}
   correctColor: {r: 0.08179426, g: 1, b: 0, a: 0}
   incorrectColor: {r: 1, g: 0, b: 0, a: 0}
+  lightPermanence: 5
   isPuzzleSolved: 0
 --- !u!1 &2101070574
 GameObject:

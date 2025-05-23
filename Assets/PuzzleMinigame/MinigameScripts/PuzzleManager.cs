@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,17 +6,22 @@ public class PuzzleManager : MonoBehaviour, ISolvablePuzzle
 {
 
     public List<PuzzleObject> correctSequence;
+    public Color correctColor;
+    public Color incorrectColor;
+    public int lightPermanence = 1;
+    
     
     private int _currentIndex = 0;
     private Material _material;
-    public Color correctColor;
-    public Color incorrectColor;
+    private Color _baseColor;
+
     public bool IsSolved => isPuzzleSolved;
     [HideInInspector] public bool isPuzzleSolved = false;
 
     private void Start()
     { 
         _material = GetComponent<Renderer>().material;
+        _baseColor = _material.color;
     }
     public void RegisterTrigger(PuzzleObject obj)
     {
@@ -31,7 +37,8 @@ public class PuzzleManager : MonoBehaviour, ISolvablePuzzle
         else
         {
             ChangeColor(incorrectColor);    
-            ResetPuzzle();
+            StartCoroutine(SetColorAfterDelay(lightPermanence, _baseColor));
+
         }
     }
 
@@ -44,4 +51,11 @@ public class PuzzleManager : MonoBehaviour, ISolvablePuzzle
 
     private void ChangeColor(Color color)
     { _material.color = color; }
+
+    private IEnumerator SetColorAfterDelay(int seconds, Color color)
+    {
+        yield return new WaitForSeconds(seconds);
+        ChangeColor(color);
+        ResetPuzzle();
+    }
 }
