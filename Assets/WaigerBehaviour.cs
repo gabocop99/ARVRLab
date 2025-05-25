@@ -4,6 +4,10 @@ using UnityEngine.XR.Hands;
 
 public class WaigerBehaviour : MonoBehaviour
 {
+    
+    [SerializeField] private Transform _spawnPointKey;
+    [SerializeField] private GameObject _key;
+    
     [SerializeField] private Collider _myTrigger;
     [SerializeField] private Transform[] Waypoints;
     [SerializeField] private GameObject dialogueCanvas;
@@ -22,8 +26,6 @@ public class WaigerBehaviour : MonoBehaviour
         _myTrigger = GetComponent<Collider>();
         dialogueCanvas = FindFirstObjectByType<DialogueWaigerIdentifier>().gameObject;
         dialogueCanvas.SetActive(false);
-        //_rightHand = FindFirstObjectByType<RightHand>().gameObject;
-        //_leftHand = FindFirstObjectByType<LeftHand>().gameObject;
     }
 
     void Update()
@@ -37,6 +39,8 @@ public class WaigerBehaviour : MonoBehaviour
                 isMoving = true;
                 dialogueCanvas.SetActive(false);
                 _myTrigger.enabled = false;
+                FindFirstObjectByType<KeyInstantier>().InstantiateKey(_key, _spawnPointKey);
+
             }
         }
 
@@ -59,7 +63,7 @@ public class WaigerBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<CharacterController>() != null)
+        if (other.GetComponent<CharacterController>())
         {
             dialogueCanvas.SetActive(true);
             _canInteract = true;

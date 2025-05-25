@@ -11,7 +11,7 @@ public class SimpleGestureDetector : MonoBehaviour
     public Material startMaterial;
     private XRHandShape _handShape;
     [SerializeField] private GameObject _RaycastOrigin;
-    [SerializeField] private GameObject foo;
+    //[SerializeField] private GameObject foo;
     [SerializeField] private LayerMask _layerMask;
     private bool _isPointing;
 
@@ -55,13 +55,13 @@ public class SimpleGestureDetector : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask, QueryTriggerInteraction.Collide))
             {
                 _isPointing = true;
-                foo.SetActive(true);
+                //foo.SetActive(true);
             }
         }
         else
         {
             _isPointing = false;
-            foo.SetActive(false);
+            //foo.SetActive(false);
             hand.GetComponentInChildren<Renderer>().material = startMaterial;
         }
     }

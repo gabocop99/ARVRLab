@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int _score;
     [SerializeField] private Transform _spawnPointKey;
     [SerializeField] private GameObject _key;
+    private bool scoreReached = false;
 
     private void Awake()
     {
@@ -23,17 +24,13 @@ public class ScoreManager : MonoBehaviour
     {
         _score += 1;
     }
-
-    private void ReduceScore()
-    {
-        _score = _score - 1;
-    }
-
+    
     void Update()
     {
-        if (_score >= 10)
+        if (_score >= 10 && !scoreReached)
         {
-            Instantiate(_key, transform.position, Quaternion.identity);
+            scoreReached = true;
+            FindFirstObjectByType<KeyInstantier>().InstantiateKey(_key, _spawnPointKey);
         }
     }
 }
