@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 452192}
   - component: {fileID: 3343646}
   - component: {fileID: 2328034}
-  - component: {fileID: -2853915520509631085}
+  - component: {fileID: 2311564838532580530}
   m_Layer: 0
   m_Name: Floor_Carpet_Grey
   m_TagString: Untagged
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-2853915520509631085
-MeshCollider:
+--- !u!65 &2311564838532580530
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +105,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: ad6f66669dc33ba48844a242dcc4ebe7, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 5.000001, y: 3.7558172, z: 4.9999995}
+  m_Center: {x: -2.5000005, y: -1.8779086, z: -2.500001}
