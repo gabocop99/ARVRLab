@@ -8,6 +8,7 @@ public class Scorer : MonoBehaviour
         if (other.GetComponent<BallIdentifier>())
         {
            ScoreManager.Instance.AddScore();
+           Destroy(other.gameObject);
         }
     }
 }
