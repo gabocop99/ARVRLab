@@ -12,9 +12,7 @@ public class KeyDropper : MonoBehaviour
     {
         _puzzle = puzzleReference as ISolvablePuzzle;
         if (_puzzle == null)
-        {
-            Debug.LogError("Puzzle reference does not implement ISolvablePuzzle");
-        }
+        { Debug.LogError("Puzzle reference does not implement ISolvablePuzzle"); }
     }
 
     // Update is called once per frame

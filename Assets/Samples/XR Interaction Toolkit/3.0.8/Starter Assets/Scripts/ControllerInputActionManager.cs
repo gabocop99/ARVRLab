@@ -97,6 +97,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [SerializeField]
         [Tooltip("Event fired when the active ray interactor changes between interaction and teleport.")]
         UnityEvent<IXRRayProvider> m_RayInteractorChanged;
+        
 
         public bool smoothMotionEnabled
         {
